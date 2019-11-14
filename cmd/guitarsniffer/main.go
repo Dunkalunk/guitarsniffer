@@ -7,8 +7,8 @@ import (
 	"sync"
 
 	"github.com/artman41/guitarsniffer/guitarjoypad"
-	"github.com/artman41/guitarsniffer/guitarpacket"
-	"github.com/artman41/guitarsniffer/sniffer"
+	guitarpacket "github.com/artman41/guitarsniffer/guitarpacket"
+	sniffer "github.com/artman41/guitarsniffer/sniffer"
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/go-gl/glfw/v3.1/glfw"
 )

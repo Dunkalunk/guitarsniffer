@@ -75,58 +75,92 @@ func display(width, height int) {
 
 	gl.LineWidth(1)
 	gc := draw2dgl.NewGraphicContext(width, height)
-	drawFretGroup(gc, &currentPacket.UpperFrets, 10, 10, "Upper Drums")
-	drawFretGroup(gc, &currentPacket.LowerFrets, 10, 50, "Lower Drums")
+	drawDrumGroup(gc, &currentPacket.Drums, 10, 10, "Drums")
+	drawCymbalGroup(gc, &currentPacket.Cymbals, 10, 50, "Cymbals")
 	drawDpad(gc, 105, 10, &currentPacket.Dpad)
 	drawButtonGroup(gc, 105, 50, &currentPacket.Buttons)
-	drawAxesGroup(gc, 135, 10, &currentPacket.Axes)
 	drawPacket(gc, 5, 90, &currentPacketHex)
 
 	gl.Flush() /* Single buffered, so needs a flush. */
 }
 
-func drawFretGroup(gc *draw2dgl.GraphicContext, frets *drumpacket.Frets, x, y float64, str string) {
-	fretXPos := func(baseX float64, i int) float64 {
+func drawDrumGroup(gc *draw2dgl.GraphicContext, drums *drumpacket.Drums, x, y float64, str string) {
+	drumXPos := func(baseX float64, i int) float64 {
 		return baseX + float64(i*15)
 	}
 	var i = 0
 	gc.SetFontData(draw2d.FontData{Name: "goregular"})
 	gc.SetFillColor(image.White)
 	gc.SetFontSize(10)
-	gc.FillStringAt(str, fretXPos(x, i), y)
+	gc.FillStringAt(str, drumXPos(x, i), y)
 
-	drawFret(gc, fretXPos(x, i), y+3, &glBool{
-		Condition: &frets.Green,
-		Off:       colourGrey,
-		On:        colourGreen,
-	})
-	i++
-	drawFret(gc, fretXPos(x, i), y+3, &glBool{
-		Condition: &frets.Red,
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.Red,
 		Off:       colourGrey,
 		On:        colourRed,
 	})
 	i++
-	drawFret(gc, fretXPos(x, i), y+3, &glBool{
-		Condition: &frets.Yellow,
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.Yellow,
 		Off:       colourGrey,
 		On:        colourYellow,
 	})
 	i++
-	drawFret(gc, fretXPos(x, i), y+3, &glBool{
-		Condition: &frets.Blue,
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.Blue,
 		Off:       colourGrey,
 		On:        colourBlue,
 	})
 	i++
-	drawFret(gc, fretXPos(x, i), y+3, &glBool{
-		Condition: &frets.Orange,
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.Green,
+		Off:       colourGrey,
+		On:        colourGreen,
+	})
+	i++
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.BassOne,
+		Off:       colourGrey,
+		On:        colourOrange,
+	})
+	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+		Condition: &drums.BassTwo,
 		Off:       colourGrey,
 		On:        colourOrange,
 	})
 }
 
-func drawFret(gc *draw2dgl.GraphicContext, x, y float64, glbool *glBool) {
+func drawCymbalGroup(gc *draw2dgl.GraphicContext, cymbals *drumpacket.Cymbals, x, y float64, str string) {
+	cymbalXPos := func(baseX float64, i int) float64 {
+		return baseX + float64(i*15)
+	}
+	var i = 0
+	gc.SetFontData(draw2d.FontData{Name: "goregular"})
+	gc.SetFillColor(image.White)
+	gc.SetFontSize(10)
+	gc.FillStringAt(str, cymbalXPos(x, i), y)
+
+	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+		Condition: &cymbals.Yellow,
+		Off:       colourGrey,
+		On:        colourYellow,
+	})
+	i++
+	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+		Condition: &cymbals.Blue,
+		Off:       colourGrey,
+		On:        colourBlue,
+	})
+	i++
+	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+		Condition: &cymbals.Green,
+		Off:       colourGrey,
+		On:        colourGreen,
+	})
+	i++
+}
+
+func drawDrum(gc *draw2dgl.GraphicContext, x, y float64, glbool *glBool) {
 	gc.BeginPath()
 	draw2dkit.Rectangle(gc, x, y, x+10, y+15)
 
@@ -232,12 +266,6 @@ func drawButton(gc *draw2dgl.GraphicContext, x, y float64, glbool *glBool) {
 	gc.SetFillColor(fillColour)
 
 	gc.Fill()
-}
-
-func drawAxesGroup(gc *draw2dgl.GraphicContext, x, y float64, axes *drumpacket.Axes) {
-	drawAxis(gc, x, y, float64((axes.Slider/16)+1)/5, "Slider")
-	drawAxis(gc, x, y+25, (float64(axes.Whammy) / 0xff), "Whammy")
-	drawAxis(gc, x, y+50, (float64(axes.Tilt) / 0xff), "Tilt")
 }
 
 func drawAxis(gc *draw2dgl.GraphicContext, x, y, fraction float64, str string) {

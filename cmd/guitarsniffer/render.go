@@ -4,7 +4,7 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/artman41/guitarsniffer/guitarpacket"
+	guitarpacket "github.com/artman41/guitarsniffer/guitarpacket"
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/golang/freetype/truetype"
 	"github.com/llgcode/draw2d"

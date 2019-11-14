@@ -37,67 +37,58 @@ type DrumJoypad struct {
 	rID    uint
 }
 
-// UpperGreen retrieves the Upper Red Fret
-func (drumJoypad DrumJoypad) UpperGreen() *vjoy.Button {
+// The following methods retrieve the Drums
+func (drumJoypad DrumJoypad) RedDrum() *vjoy.Button {
 	return drumJoypad.joypad.Button(redDrum)
 }
 
-// UpperRed retrieves the Upper Yellow Fret
-func (drumJoypad DrumJoypad) UpperRed() *vjoy.Button {
+func (drumJoypad DrumJoypad) YellowDrum() *vjoy.Button {
 	return drumJoypad.joypad.Button(yellowDrum)
 }
 
-// UpperYellow retrieves the Upper Blue Fret
-func (drumJoypad DrumJoypad) UpperYellow() *vjoy.Button {
+func (drumJoypad DrumJoypad) BlueDrum() *vjoy.Button {
 	return drumJoypad.joypad.Button(blueDrum)
 }
 
-// UpperBlue retrieves the Upper Green Fret
-func (drumJoypad DrumJoypad) UpperBlue() *vjoy.Button {
+func (drumJoypad DrumJoypad) GreenDrum() *vjoy.Button {
 	return drumJoypad.joypad.Button(greenDrum)
 }
 
-// LowerGreen retrieves the Lower Red Fret
-func (drumJoypad DrumJoypad) LowerGreen() *vjoy.Button {
+// The following methods retrieve the Cymbals
+func (drumJoypad DrumJoypad) YellowCymbal() *vjoy.Button {
 	return drumJoypad.joypad.Button(yellowCymbal)
 }
 
-// LowerRed retrieves the Lower Yellow Fret
-func (drumJoypad DrumJoypad) LowerRed() *vjoy.Button {
+func (drumJoypad DrumJoypad) BlueCymbal() *vjoy.Button {
 	return drumJoypad.joypad.Button(blueCymbal)
 }
 
-// LowerYellow retrieves the Lower Blue Fret
-func (drumJoypad DrumJoypad) LowerYellow() *vjoy.Button {
+func (drumJoypad DrumJoypad) GreenCymbal() *vjoy.Button {
 	return drumJoypad.joypad.Button(greenCymbal)
 }
 
-// UpperOrange retrieves the Upper BassOne Fret
-func (drumJoypad DrumJoypad) UpperOrange() *vjoy.Button {
+// The following methods retrieve the Bass Pedals
+func (drumJoypad DrumJoypad) BassOne() *vjoy.Button {
 	return drumJoypad.joypad.Button(bassOne)
 }
 
-// LowerOrange retrieves the Lower BassOne Fret
-func (drumJoypad DrumJoypad) LowerOrange() *vjoy.Button {
+func (drumJoypad DrumJoypad) BassTwo() *vjoy.Button {
 	return drumJoypad.joypad.Button(bassTwo)
 }
 
-// DpadUp retrieves the Upper Dpad button
+// The following methods retrieve the Dpad Buttons
 func (drumJoypad DrumJoypad) DpadUp() *vjoy.Button {
 	return drumJoypad.joypad.Button(dpadUp)
 }
 
-// DpadDown retrieves the Down Dpad button
 func (drumJoypad DrumJoypad) DpadDown() *vjoy.Button {
 	return drumJoypad.joypad.Button(dpadDown)
 }
 
-// DpadLeft retrieves the Left Dpad button
 func (drumJoypad DrumJoypad) DpadLeft() *vjoy.Button {
 	return drumJoypad.joypad.Button(dpadLeft)
 }
 
-// DpadRight retrieves the Right Dpad button
 func (drumJoypad DrumJoypad) DpadRight() *vjoy.Button {
 	return drumJoypad.joypad.Button(dpadRight)
 }
@@ -112,20 +103,19 @@ func (drumJoypad DrumJoypad) ButtonOptions() *vjoy.Button {
 	return drumJoypad.joypad.Button(buttonOptions)
 }
 
-func (drumJoypad DrumJoypad) SetUpperFretValues(frets drumpacket.Frets) {
-	drumJoypad.UpperGreen().Set(frets.Green)
-	drumJoypad.UpperRed().Set(frets.Red)
-	drumJoypad.UpperYellow().Set(frets.Yellow)
-	drumJoypad.UpperBlue().Set(frets.Blue)
-	drumJoypad.UpperOrange().Set(frets.Orange)
+func (drumJoypad DrumJoypad) SetDrumValues(drums drumpacket.Drums) {
+	drumJoypad.GreenDrum().Set(drums.Green)
+	drumJoypad.RedDrum().Set(drums.Red)
+	drumJoypad.YellowDrum().Set(drums.Yellow)
+	drumJoypad.BlueDrum().Set(drums.Blue)
+	drumJoypad.BassOne().Set(drums.BassOne)
+	drumJoypad.BassTwo().Set(drums.BassTwo)
 }
 
-func (drumJoypad DrumJoypad) SetLowerFretValues(frets drumpacket.Frets) {
-	drumJoypad.LowerGreen().Set(frets.Green)
-	drumJoypad.LowerRed().Set(frets.Red)
-	drumJoypad.LowerYellow().Set(frets.Yellow)
-	drumJoypad.LowerBlue().Set(frets.Blue)
-	drumJoypad.LowerOrange().Set(frets.Orange)
+func (drumJoypad DrumJoypad) SetCymbalValues(cymbals drumpacket.Cymbals) {
+	drumJoypad.YellowCymbal().Set(cymbals.Yellow)
+	drumJoypad.BlueCymbal().Set(cymbals.Blue)
+	drumJoypad.GreenCymbal().Set(cymbals.Green)
 }
 
 func (drumJoypad DrumJoypad) SetDpadValues(dpad drumpacket.Dpad) {
@@ -148,8 +138,8 @@ func (drumJoypad DrumJoypad) SetButtonValues(buttons drumpacket.Buttons) {
 }
 
 func (drumJoypad DrumJoypad) SetValues(drumPacket drumpacket.DrumPacket) {
-	drumJoypad.SetUpperFretValues(drumPacket.UpperFrets)
-	drumJoypad.SetLowerFretValues(drumPacket.LowerFrets)
+	drumJoypad.SetDrumValues(drumPacket.Drums)
+	drumJoypad.SetCymbalValues(drumPacket.Cymbals)
 	drumJoypad.SetDpadValues(drumPacket.Dpad)
 	drumJoypad.SetButtonValues(drumPacket.Buttons)
 }
