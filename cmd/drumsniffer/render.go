@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dunkalunk/drumpacket"
+	"dunkalunk/drumpacket"
 	"image"
 	"image/color"
 

@@ -1,7 +1,7 @@
 package guitarjoypad
 
 import (
-	guitarpacket "github.com/artman41/guitarsniffer/guitarpacket"
+	"github.com/artman41/guitarsniffer/guitarpacket"
 	"github.com/artman41/vjoy"
 )
 
