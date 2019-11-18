@@ -77,12 +77,14 @@ func display(width, height int) {
 	gc := draw2dgl.NewGraphicContext(width, height)
 	drawDrumGroup(gc, &currentPacket.Drums, 10, 10, "Drums")
 	drawCymbalGroup(gc, &currentPacket.Cymbals, 10, 50, "Cymbals")
-	drawDpad(gc, 105, 10, &currentPacket.Dpad)
-	drawButtonGroup(gc, 105, 50, &currentPacket.Buttons)
+	drawDpad(gc, 130, 10, &currentPacket.Dpad)
+	drawButtonGroup(gc, 130, 50, &currentPacket.Buttons)
 	drawPacket(gc, 5, 90, &currentPacketHex)
 
 	gl.Flush() /* Single buffered, so needs a flush. */
 }
+
+var ychange = float64(15)
 
 func drawDrumGroup(gc *draw2dgl.GraphicContext, drums *drumpacket.Drums, x, y float64, str string) {
 	drumXPos := func(baseX float64, i int) float64 {
@@ -94,36 +96,37 @@ func drawDrumGroup(gc *draw2dgl.GraphicContext, drums *drumpacket.Drums, x, y fl
 	gc.SetFontSize(10)
 	gc.FillStringAt(str, drumXPos(x, i), y)
 
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.Red,
 		Off:       colourGrey,
 		On:        colourRed,
 	})
 	i++
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.Yellow,
 		Off:       colourGrey,
 		On:        colourYellow,
 	})
 	i++
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.Blue,
 		Off:       colourGrey,
 		On:        colourBlue,
 	})
 	i++
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.Green,
 		Off:       colourGrey,
 		On:        colourGreen,
 	})
 	i++
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.BassOne,
 		Off:       colourGrey,
 		On:        colourOrange,
 	})
-	drawDrum(gc, drumXPos(x, i), y+3, &glBool{
+	i++
+	drawDrum(gc, drumXPos(x, i), y+ychange, &glBool{
 		Condition: &drums.BassTwo,
 		Off:       colourGrey,
 		On:        colourOrange,
@@ -140,19 +143,19 @@ func drawCymbalGroup(gc *draw2dgl.GraphicContext, cymbals *drumpacket.Cymbals, x
 	gc.SetFontSize(10)
 	gc.FillStringAt(str, cymbalXPos(x, i), y)
 
-	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+	drawDrum(gc, cymbalXPos(x, i), y+ychange, &glBool{
 		Condition: &cymbals.Yellow,
 		Off:       colourGrey,
 		On:        colourYellow,
 	})
 	i++
-	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+	drawDrum(gc, cymbalXPos(x, i), y+ychange, &glBool{
 		Condition: &cymbals.Blue,
 		Off:       colourGrey,
 		On:        colourBlue,
 	})
 	i++
-	drawDrum(gc, cymbalXPos(x, i), y+3, &glBool{
+	drawDrum(gc, cymbalXPos(x, i), y+ychange, &glBool{
 		Condition: &cymbals.Green,
 		Off:       colourGrey,
 		On:        colourGreen,
@@ -162,7 +165,7 @@ func drawCymbalGroup(gc *draw2dgl.GraphicContext, cymbals *drumpacket.Cymbals, x
 
 func drawDrum(gc *draw2dgl.GraphicContext, x, y float64, glbool *glBool) {
 	gc.BeginPath()
-	draw2dkit.Rectangle(gc, x, y, x+10, y+15)
+	draw2dkit.Circle(gc, x, y, 6)
 
 	var fillColour = glbool.Off
 	if *glbool.Condition {
