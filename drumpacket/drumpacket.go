@@ -4,7 +4,7 @@ const XboxHeaderLength = 22
 
 // Drums
 const (
-	RedDrum = 0x14
+	RedDrum = 0x20
 
 	YellowDrum1 = 0x1
 	YellowDrum2 = 0x2
@@ -14,27 +14,27 @@ const (
 	YellowDrum6 = 0x6
 	YellowDrum7 = 0x7
 
-	BlueDrum10 = 0xA
-	BlueDrum20 = 0x14
-	BlueDrum30 = 0x1E
-	BlueDrum40 = 0x28
-	BlueDrum50 = 0x32
-	BlueDrum60 = 0x3C
+	BlueDrum10 = 0x10
+	BlueDrum20 = 0x20
+	BlueDrum30 = 0x30
+	BlueDrum40 = 0x40
+	BlueDrum50 = 0x50
+	BlueDrum60 = 0x60
 
-	GreenDrum = 0xA
-	BassOne   = 0xA
-	BassTwo   = 0x14
+	GreenDrum = 0x10
+	BassOne   = 0x10
+	BassTwo   = 0x20
 )
 
 // Cymbals
 const (
-	YellowCymbal10 = 0xA
-	YellowCymbal20 = 0x14
-	YellowCymbal30 = 0x1E
-	YellowCymbal40 = 0x28
-	YellowCymbal50 = 0x32
-	YellowCymbal60 = 0x3C
-	YellowCymbal70 = 0x46
+	YellowCymbal10 = 0x10
+	YellowCymbal20 = 0x20
+	YellowCymbal30 = 0x30
+	YellowCymbal40 = 0x40
+	YellowCymbal50 = 0x50
+	YellowCymbal60 = 0x60
+	YellowCymbal70 = 0x70
 
 	BlueCymbal1 = 0x1
 	BlueCymbal2 = 0x2
@@ -44,13 +44,13 @@ const (
 	BlueCymbal6 = 0x6
 	BlueCymbal7 = 0x7
 
-	GreenCymbal10 = 0xA
-	GreenCymbal20 = 0x14
-	GreenCymbal30 = 0x1E
-	GreenCymbal40 = 0x28
-	GreenCymbal50 = 0x32
-	GreenCymbal60 = 0x3C
-	GreenCymbal70 = 0x46
+	GreenCymbal10 = 0x10
+	GreenCymbal20 = 0x20
+	GreenCymbal30 = 0x30
+	GreenCymbal40 = 0x40
+	GreenCymbal50 = 0x50
+	GreenCymbal60 = 0x60
+	GreenCymbal70 = 0x70
 )
 
 // Buttons
