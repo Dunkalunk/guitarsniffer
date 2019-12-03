@@ -103,20 +103,12 @@ func CreateDrumPacket(packet []byte) DrumPacket {
 
 func getDrums(packet []byte) Drums {
 	return Drums{
-		Red:     getRedDrum(packet[PosRedDrum]),
+		Red:     packet[PosRedDrum]&RedDrum != 0,
 		Yellow:  getYellowDrum(packet[PosYellowDrum]),
 		Blue:    getBlueDrum(packet[PosBlueDrum]),
-		Green:   getGreenDrum(packet[PosGreenDrum]),
+		Green:   packet[PosGreenDrum]&GreenDrum != 0,
 		BassOne: packet[PosBassPedal]&BassOne != 0,
 		BassTwo: packet[PosBassPedal]&BassTwo != 0,
-	}
-}
-
-func getRedDrum(drumBitMask byte) bool {
-	if drumBitMask&RedDrum != 0 {
-		return true
-	} else {
-		return false
 	}
 }
 
@@ -152,14 +144,6 @@ func getBlueDrum(drumBitMask byte) bool {
 	} else if drumBitMask&BlueDrum50 != 0 {
 		return true
 	} else if drumBitMask&BlueDrum60 != 0 {
-		return true
-	} else {
-		return false
-	}
-}
-
-func getGreenDrum(drumBitMask byte) bool {
-	if drumBitMask&GreenDrum != 0 {
 		return true
 	} else {
 		return false
