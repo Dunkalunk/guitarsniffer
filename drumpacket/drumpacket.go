@@ -113,19 +113,15 @@ func getDrums(packet []byte) Drums {
 }
 
 func getYellowDrum(drumBitMask byte) bool {
-	if drumBitMask&YellowDrum1 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum2 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum3 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum4 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum5 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum6 != 0 {
-		return true
-	} else if drumBitMask&YellowDrum7 != 0 {
+	if drumBitMask == 0 {
+		return false
+	} else if drumBitMask&YellowDrum1 != 0 ||
+		drumBitMask&YellowDrum2 != 0 ||
+		drumBitMask&YellowDrum3 != 0 ||
+		drumBitMask&YellowDrum4 != 0 ||
+		drumBitMask&YellowDrum5 != 0 ||
+		drumBitMask&YellowDrum6 != 0 ||
+		drumBitMask&YellowDrum7 != 0 {
 		return true
 	} else {
 		return false
@@ -133,17 +129,14 @@ func getYellowDrum(drumBitMask byte) bool {
 }
 
 func getBlueDrum(drumBitMask byte) bool {
-	if drumBitMask&BlueDrum10 != 0 {
-		return true
-	} else if drumBitMask&BlueDrum20 != 0 {
-		return true
-	} else if drumBitMask&BlueDrum30 != 0 {
-		return true
-	} else if drumBitMask&BlueDrum40 != 0 {
-		return true
-	} else if drumBitMask&BlueDrum50 != 0 {
-		return true
-	} else if drumBitMask&BlueDrum60 != 0 {
+	if drumBitMask == 0 {
+		return false
+	} else if drumBitMask&BlueDrum10 != 0 ||
+		drumBitMask&BlueDrum20 != 0 ||
+		drumBitMask&BlueDrum30 != 0 ||
+		drumBitMask&BlueDrum40 != 0 ||
+		drumBitMask&BlueDrum50 != 0 ||
+		drumBitMask&BlueDrum60 != 0 {
 		return true
 	} else {
 		return false
@@ -159,19 +152,15 @@ func getCymbals(packet []byte) Cymbals {
 }
 
 func getYellowCymbal(drumBitMask byte) bool {
-	if drumBitMask&YellowCymbal10 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal20 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal30 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal40 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal50 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal60 != 0 {
-		return true
-	} else if drumBitMask&YellowCymbal70 != 0 {
+	if drumBitMask == 0 {
+		return false
+	} else if drumBitMask&YellowCymbal10 != 0 ||
+		drumBitMask&YellowCymbal20 != 0 ||
+		drumBitMask&YellowCymbal30 != 0 ||
+		drumBitMask&YellowCymbal40 != 0 ||
+		drumBitMask&YellowCymbal50 != 0 ||
+		drumBitMask&YellowCymbal60 != 0 ||
+		drumBitMask&YellowCymbal70 != 0 {
 		return true
 	} else {
 		return false
@@ -179,19 +168,15 @@ func getYellowCymbal(drumBitMask byte) bool {
 }
 
 func getBlueCymbal(drumBitMask byte) bool {
-	if drumBitMask&BlueCymbal1 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal2 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal3 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal4 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal5 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal6 != 0 {
-		return true
-	} else if drumBitMask&BlueCymbal7 != 0 {
+	if drumBitMask == 0 {
+		return false
+	} else if drumBitMask&BlueCymbal1 != 0 ||
+		drumBitMask&BlueCymbal2 != 0 ||
+		drumBitMask&BlueCymbal3 != 0 ||
+		drumBitMask&BlueCymbal4 != 0 ||
+		drumBitMask&BlueCymbal5 != 0 ||
+		drumBitMask&BlueCymbal6 != 0 ||
+		drumBitMask&BlueCymbal7 != 0 {
 		return true
 	} else {
 		return false
@@ -199,19 +184,15 @@ func getBlueCymbal(drumBitMask byte) bool {
 }
 
 func getGreenCymbal(drumBitMask byte) bool {
-	if drumBitMask&GreenCymbal10 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal20 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal30 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal40 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal50 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal60 != 0 {
-		return true
-	} else if drumBitMask&GreenCymbal70 != 0 {
+	if drumBitMask == 0 {
+		return false
+	} else if drumBitMask&GreenCymbal10 != 0 ||
+		drumBitMask&GreenCymbal20 != 0 ||
+		drumBitMask&GreenCymbal30 != 0 ||
+		drumBitMask&GreenCymbal40 != 0 ||
+		drumBitMask&GreenCymbal50 != 0 ||
+		drumBitMask&GreenCymbal60 != 0 ||
+		drumBitMask&GreenCymbal70 != 0 {
 		return true
 	} else {
 		return false
