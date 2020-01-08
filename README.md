@@ -28,7 +28,7 @@
 
 ### Download the Application
 
-* Download the latest release from [here](https://github.com/Dunkalunk/drumsniffer/releases/latest)
+* Download the latest release from [here](https://github.com/Dunkalunk/guitarsniffer/releases/latest)
 
 ### DONE!
 
