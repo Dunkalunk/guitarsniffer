@@ -6,9 +6,9 @@ import (
 	"runtime"
 	"sync"
 
-	"dunkalunk/drumjoypad"
-	"dunkalunk/drumpacket"
-	drumsniffer "dunkalunk/sniffer"
+	"github.com/dunkalunk/guitarsniffer/drumjoypad"
+	"github.com/dunkalunk/guitarsniffer/drumpacket"
+	drumsniffer "github.com/dunkalunk/guitarsniffer/sniffer"
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/go-gl/glfw/v3.1/glfw"
 )

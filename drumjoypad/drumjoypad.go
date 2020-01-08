@@ -1,8 +1,8 @@
 package drumjoypad
 
 import (
-	"dunkalunk/drumpacket"
 	"github.com/artman41/vjoy"
+	"github.com/dunkalunk/guitarsniffer/drumpacket"
 )
 
 const (

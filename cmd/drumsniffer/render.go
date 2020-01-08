@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dunkalunk/drumpacket"
+	"github.com/dunkalunk/guitarsniffer/drumpacket"
 	"image"
 	"image/color"
 
