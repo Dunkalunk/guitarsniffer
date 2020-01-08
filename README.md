@@ -39,3 +39,6 @@ Open the application and a gui will display showing all the currently held butto
 ![drumsniffer_gui1](https://toxs3w.ch.files.1drv.com/y4mGF1Vj1Lkj-iqqHUHSYKCq91wGayRB4QHJTDQpZyb6Gw6rKk-jljvHo8OzNJCfxVZbWeAfQPm80wklrbNRwXXphJfOT6gkzOliNT9DsN6D_Av_vAX-bPBb4VOMwYM4BIuW4HgTxhXwcqWO8KUJR-oMBNUFgALZKwVEM3Im9RQUTCVnnoeN7LdySgWHr3aP_Gv?width=232&height=129&cropmode=none)
 
 
+## Phase Shift Cymbal Setup
+
+Since Clone Hero hasn't released anything yet the only current option to play with is Phase Shift.  But their controller setup doesn't work with pro cymbals setup so you need to follow the instructions [here](https://www.dwsk.co.uk/phase_shift_readme.html#customcontrollers) to map out all the drums and cymbals.  It's not perfect.  From what I've seen so far Clone Hero will be MUCH better!
