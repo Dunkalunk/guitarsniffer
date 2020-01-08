@@ -1,4 +1,6 @@
-# GuitarSniffer [![AbstruseCI](https://ci.artman41.xyz/badge/1)](https://ci.artman41.xyz/repo/1)
+# DrumSniffer - based on GuitarSniffer by artman41 found [here](https://github.com/artman41/guitarsniffer)
+
+# FIRST RELEASE - FEEDBACK WELCOME
 
 ## Installation
 
@@ -26,7 +28,7 @@
 
 ### Download the Application
 
-* Download the latest release from [here](https://github.com/artman41/guitarsniffer/releases/latest)
+* Download the latest release from [here](https://github.com/Dunkalunk/drumsniffer/releases/latest)
 
 ### DONE!
 
@@ -34,12 +36,6 @@ Enjoy yourself!
 
 Open the application and a gui will display showing all the currently held buttons & the `CurrentPacket` at the bottom!
 
-![guitarsniffer_gui1](https://mtzibw.dm.files.1drv.com/y4m_A4BHUZe1i5T6Ed04lLwrZODZsWNeOiOvwtgJ7NGv0vnoj1_b1OpXaWm6oo1euP_f0j11akzTp_vOXBFeIwOLvUcbPvQbNl2mASYx9FUxnIbaPmSOINshi6bYMJYMzdNSw8EI-pFLtwBCUWHYOQ5AoNhN9FKA9MOnkH68coXkCeywHUOUeuuD_XmRyFwIZFusxCHC5HZCpxd8WIZ6Wc5oQ)
+![drumsniffer_gui1](https://toxs3w.ch.files.1drv.com/y4mGF1Vj1Lkj-iqqHUHSYKCq91wGayRB4QHJTDQpZyb6Gw6rKk-jljvHo8OzNJCfxVZbWeAfQPm80wklrbNRwXXphJfOT6gkzOliNT9DsN6D_Av_vAX-bPBb4VOMwYM4BIuW4HgTxhXwcqWO8KUJR-oMBNUFgALZKwVEM3Im9RQUTCVnnoeN7LdySgWHr3aP_Gv?width=232&height=129&cropmode=none)
 
-![guitarsniffer_gui2](https://mtbj4w.dm.files.1drv.com/y4mdlrx-ReJqVoenZiRPXsKRPlQSKnBqdWak7JyMGhMC3YEwazUcvKNPSSYCrwdLrgrnrvMIf5fnUzYBIvGjtJz1UEVFymr5Lu6uVzKz0iNdkP4_hnqLJba2htJwPLd-SH2PjzEANsOeFgTcqFyOZbpvMm6Q94MHdhvwIn3RvGrV1Jn_wuIJ1JVb4CYgCalM-d8j5Crbxf3H9zXFlTGmNnuTA)
 
-## Development
-
-* A folder full of logs for every possible packet can be found [here](https://1drv.ms/f/s!AgQGk0OeTMLwhA-uDO9IQHEHqGhv)
-* A spreadsheet detailing the byte to view for each packet piece can be found [here](https://docs.google.com/spreadsheets/d/1ITZUvRniGpfS_HV_rBpSwlDdGukc3GC1CeOe7SavQBo/edit?usp=sharing)
-* The original spreadsheet can be found [here](https://1drv.ms/x/s!AgQGk0OeTMLwg3GBDXFUC3Erj4Wb)
