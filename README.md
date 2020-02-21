@@ -38,7 +38,18 @@ Open the application and a gui will display showing all the currently held butto
 
 ![drumsniffer_gui1](https://toxs3w.ch.files.1drv.com/y4mGF1Vj1Lkj-iqqHUHSYKCq91wGayRB4QHJTDQpZyb6Gw6rKk-jljvHo8OzNJCfxVZbWeAfQPm80wklrbNRwXXphJfOT6gkzOliNT9DsN6D_Av_vAX-bPBb4VOMwYM4BIuW4HgTxhXwcqWO8KUJR-oMBNUFgALZKwVEM3Im9RQUTCVnnoeN7LdySgWHr3aP_Gv?width=232&height=129&cropmode=none)
 
+![drumsniffer_gui2](https://6s5njq.ch.files.1drv.com/y4mthDHryi8Ww7-96jRT_yVoRw2IxcfqNA1ObxwEglaee4tXd3WA6SjqpD1xGJL0lROxFPBtBKDxgEhIBmhRCZUkG2XTAzXYARbZuFwn6JxK7Yx2ddkhbLa6G7gsWx5pc4Tpp8t1VTkVJH3ZkLMlv0ovcgULFLfFn0Nq7kUUN02eH8gqinCNtQmE45tiHyYcNtB?width=232&height=127&cropmode=none)
 
-## Phase Shift Cymbal Setup
+## Phase Shift Setup
 
-Since Clone Hero hasn't released anything yet the only current option to play with is Phase Shift.  But their controller setup doesn't work with pro cymbals setup so you need to follow the instructions [here](https://www.dwsk.co.uk/phase_shift_readme.html#customcontrollers) to map out all the drums and cymbals.  It's not perfect.  From what I've seen so far Clone Hero will be MUCH better!
+Since Clone Hero hasn't released anything yet the only current option to play with is Phase Shift.  
+
+### Steam Version
+
+After setting up the drum sniffer just open the game from Steam and the controller won't be recognized.  It will then have you map all the drums.  Pro cymbals work just fine for this.
+
+### Free Version
+
+For four lane drums just download the controller mapper [here](http://www.mediafire.com/file/dtwnzgzmwdz/PSCtrl_v1.6.zip/file).  This will help you create a new profile to add to the device_list.ini in the settings folder of the Phase Shift install
+
+Their controller profiler doesn't work with pro cymbals as far as I can tell so you need to follow the instructions [here](https://www.dwsk.co.uk/phase_shift_readme.html#customcontrollers) to map out all the drums and cymbals.  It's not perfect.  From what I've seen so far Clone Hero will be MUCH better!
